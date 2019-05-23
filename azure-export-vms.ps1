@@ -120,12 +120,12 @@ Catch {
 
         #Export the VMs info to a CSV file labeled by the subscription name
         $csvSubName = $SubName.replace("/","---")
-        $Current | Export-CSV "$subsPath\Subscription--$csvSubName-VMs.csv" -Delimiter ';'
+        $Current | Export-CSV "$subsPath\Subscription--$csvSubName-VMs.csv" -Delimiter ';' -force -notypeinformation
         }
     }
 
     #Export All VMs in to a single CSV file
-    $AzureVMs | Export-CSV "$outputPath\Azure--All-VMs.csv" -Delimiter ';'
+    $AzureVMs | Export-CSV "$outputPath\Azure--All-VMs.csv" -Delimiter ';'  -notypeinformation
 
     # HTML report
     $a = "<style>"
